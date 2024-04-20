@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Pertanyaan</title>
+    <style>
+        /* Gaya CSS untuk tata letak halaman */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #F0DDD7; 
+        }
+        img {
+            width: 50%;
+            margin-bottom: 20px;
+        }
+        .question {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .options {
+            display: flex;
+            justify-content: center;
+        }
+        .options button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 40px;
+            cursor: pointer;
+            border-radius: 10px; /* Membuat sudut tombol menjadi melengkung */
+            border: none; /* Menghapus b#42445Aorder */
+        }
+        /* Gaya tambahan untuk warna tombol */
+        .options button.yes {
+            background-color: #72E985;
+            color: white;
+        }
+        .options button.no {
+            background-color: #FF598D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <img id="gambar" src="https://i.pinimg.com/564x/ea/f9/b1/eaf9b1252a31ee567c1e7402fe62fe49.jpg" alt="habedee!!">
+    <div class="question">habede bill, diterima ga ni?</div>
+    <div class="options">
+        <button class="yes" onclick="jawab('yes')">Yes</button>
+        <button class="no" onclick="jawab('no')">No</button>
+    </div>
+    <script>
+        var pertanyaan = [
+            {text: "habede bill, diterima ga ni?", image: "https://i.pinimg.com/564x/ea/f9/b1/eaf9b1252a31ee567c1e7402fe62fe49.jpg"},
+            {text: "malah no dipencet nya wehhh :(", image: "https://i.pinimg.com/564x/9c/6c/c3/9c6cc3952c05ffa185c0ae211a31e8bb.jpg"},
+            {text: "yess tu penceet woee", image: "https://i.pinimg.com/736x/1c/2a/4c/1c2a4c880c3dacaa08ccfc313c29f94b.jpg"},
+            {text: "duhh, jan pencet lagi no nya ", image: "https://i.pinimg.com/736x/85/6f/51/856f51c74d8e9820d02442e321a36236.jpg"},
+            {text: "duhhh, duhhhhh", image: "https://i.pinimg.com/236x/51/6c/f1/516cf166d91f7492eb6290ffd8f51eb2.jpg"},
+            {text: "jangan tekan no terus!!!!", image: "https://i.pinimg.com/236x/8c/2f/04/8c2f04c5cefad33447d83ce66d698c14.jpg"},
+            {text: "NABILAA!!", image: "https://i.pinimg.com/564x/26/3a/48/263a48cfe9d721cb15d51ef7055e3e93.jpg"},
+            {text: "yo----", image: "https://i.pinimg.com/736x/70/29/4b/70294b550b67245fa531c82c1ab6a3b6.jpg"},
+            {text: "Woe!! Tekan yes", image: "https://i.pinimg.com/564x/18/50/76/185076bae3f0ef7588073c17d21d6c33.jpg"},
+            {text: "Apa coba..", image: "https://i.pinimg.com/736x/ac/25/f0/ac25f0cb36a2d70fe7df046f151f3d07.jpg"},
+            {text: "Jangan tekan no", image: "https://i.pinimg.com/564x/85/ac/ef/85acef01d0403c8222a10068ae534087.jpg"},
+            {text: "Isshhh jangan", image: "https://i.pinimg.com/564x/fa/07/2b/fa072bf1999d9e94c249f81fe3966e37.jpg"},
+            {text: "kiaaaaa!!", image: "https://i.pinimg.com/564x/50/e9/3e/50e93e96cbcd509900e9ad4b2910c40d.jpg"},
+            {text: "Serius..?", image: "https://i.pinimg.com/564x/a7/32/e3/a732e392b657be4fceffdffd214e5e21.jpg"},
+            {text: "terakhir ni.. Diterima gak?...", image: "https://i.pinimg.com/736x/2c/4c/0e/2c4c0e63d88423b15bb825bb41057839.jpg"},
+            {text: "dahlah, dari bulan puasa buetnya padahal....", image: "https://i.pinimg.com/564x/1a/ee/bf/1aeebf449f9e9476e9309e4d4c061549.jpg"}
+        ];
+        var indexPertanyaan = 0;
+
+        function jawab(jawaban) {
+            if (jawaban === 'yes') {
+                document.getElementById('gambar').src = 'https://i.pinimg.com/736x/c9/1e/3a/c91e3a494c1184f08fc9cb3d992283af.jpg';
+                document.querySelector('.question').style.display = 'none';
+                document.querySelector('.options').style.display = 'none';
+                return; // Menghentikan eksekusi fungsi setelah ini
+            } else {
+                if (indexPertanyaan === 15) {
+                    window.location.href = 'https://i.pinimg.com/originals/df/26/39/df2639071ea895cf786bd6fc7e247c36.gif';
+                } else {
+                    indexPertanyaan++;
+                }
+            }
+            document.getElementById('gambar').src = pertanyaan[indexPertanyaan].image;
+            document.querySelector('.question').textContent = pertanyaan[indexPertanyaan].text;
+        }
+    </script>
+</body>
+</html>
